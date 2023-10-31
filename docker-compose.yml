@@ -1,0 +1,54 @@
+services:
+  atm9:
+    hostname: atm9
+    container_name: atm9
+    profiles: ["atm9"]
+    image: itzg/minecraft-server:java17
+    ports:
+      - "25565:25565"
+    env_file: .env
+    environment:
+
+      # OS OPTIONS
+      UID: 1000 #Minecraft user
+      GID: 1000 #Minecraft group
+      MEMORY: 12G
+      TZ: UTC
+      USE_AIKAR_FLAGS: true
+      #JVM_XX_OPTS: +UseG1GC +ParallelRefProcEnabled MaxGCPauseMillis=200 +UnlockExperimentalVMOptions +UnlockDiagnosticVMOptions +DisableExplicitGC +AlwaysPreTouch G1NewSizePercent=30 G1MaxNewSizePercent=40 G1HeapRegionSize=8M G1ReservePercent=20 G1HeapWastePercent=5 G1MixedGCCountTarget=4 InitiatingHeapOccupancyPercent=15 G1MixedGCLiveThresholdPercent=90 G1RSetUpdatingPauseTimePercent=5 SurvivorRatio=32 +PerfDisableSharedMem MaxTenuringThreshold=1 -UseBiasedLocking UseAVX=3 +UseStringDeduplication +UseFastUnorderedTimeStamps +UseAES +UseAESIntrinsics UseSSE=4 +UseFMA AllocatePrefetchStyle=1 +UseLoopPredicate +RangeCheckElimination +EliminateLocks +DoEscapeAnalysis +UseCodeCacheFlushing +SegmentedCodeCache +UseFastJNIAccessors +OptimizeStringConcat +UseCompressedOops +UseThreadPriorities +OmitStackTraceInFastThrow +TrustFinalNonStaticFields ThreadPriorityPolicy=1 +UseInlineCaches +RewriteBytecodes +RewriteFrequentPairs +UseNUMA -DontCompileHugeMethods +UseFPUForSpilling +UseFastStosb +UseNewLongLShift +UseVectorCmov +UseXMMForArrayCopy +UseXmmI2D +UseXmmI2F +UseXmmLoadAndClearUpper +UseXmmRegToRegMoveAll
+      #JVM_DD_OPTS: file.encoding=UTF-8 java.security.egd=file:/dev/urandom
+      #JVM_OPTS: -Xlog:async --add-modules jdk.incubator.vector
+
+      # SERVER
+      TYPE: AUTO_CURSEFORGE
+      EULA: true
+      ALLOW_FLIGHT: true
+      MOTD: "All the Mods 9 - New World Order"
+
+      # CURSEFORGE
+      # oh my god change this to use a secret ASAP and also roll it when you do
+      CF_API_KEY: '${CF_API_KEY}'
+      CF_SLUG: all-the-mods-9
+      # Change this whenever there is a new ATM9 Version
+      # Doing it this way so we can simply change version and coordinate updates before sessions
+      # so it doesn't update while we're offline 
+      CF_FILENAME_MATCHER: 0.2.10
+      # Mods (in order of ID):
+      # - GoProne
+      # - Dave's Building Extended
+      # - Bigger Stacks
+      # - Cave Dweller Reimagined
+      CF_FORCE_INCLUDE_MODS: 327968,568645,564896,921557
+      CF_FORCE_SYNCHRONIZE: true
+
+      # Uncomment for debug only
+      #EXEC_DIRECTLY: true
+
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - ./servers/atm9:/data
+      # Drop mods in here that have been blocked from automatic download via CF API
+      - ./downloads:/downloads
+    

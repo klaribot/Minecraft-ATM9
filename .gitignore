@@ -1,0 +1,65 @@
+# Ignore env vars since these are per-machine
+.env
+
+# Ignore these env vars since they're populated on container start
+**/.rcon-cli.env
+**/.*forge-manifest.json
+**/.install-curseforge.env
+
+# Ignore these run files since the itzg container has its own run mechanism
+**/run.bat
+**/run.sh
+**/user_jvm_args.txt
+
+# Ignore downloads since we're not allowed to distribute
+# these will have to be fetched manually and placed in ./downloads
+downloads/*.jar
+
+# Ignore cache and library files since these can be rebuilt
+**/.cache
+**/.mixin.out
+**/local
+**/ldlib
+**/libraries
+**/usercache.json
+**/usernamecache.json
+**/modernfix/structureCacheV1
+
+
+# Ignore crash reports and logs
+**/crash-reports
+**/logs
+
+# Ignore mods folder since these can be auto-retrieved
+**/mods
+
+# Ignore schematics, worlds, and computercraft computers, since these will be dropped in later
+**/schematics
+**/world
+
+# Ignore automatic backups since these will be retrieved externally
+**/simplebackups
+
+# Ignore rhino.local.properties - "...please do not push this to version control if you don't know what you're doing!"
+**/rhino.local.properties
+
+# Ignore all mod configs since these are managed by the ATM team
+**/config/**
+**/defaultconfigs/**
+**/patchouli_books
+
+# ...HOWEVER, if any configs have been modified manually for server balance, add them to the "don't ignore" list here.
+#!**/config/example1.toml
+#!**/config/example2.toml
+#!**/defaultconfigs/exampledefault.toml
+
+# Ignore journeymap configs
+**/journeymap/server/*/*.config
+
+# ...HOWEVER, re-include a config if a manual change for server balance is made.
+#!**/journeymap/server/*/journeymap.server.example_mod~example_dimension.config
+
+# Ignored for legal copyright reasons - DON'T CHANGE
+**/config/ftbquests/quests
+**/kubejs
+**/packmenu

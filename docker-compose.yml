@@ -12,7 +12,7 @@ services:
       # OS OPTIONS
       UID: 1000 #Minecraft user
       GID: 1000 #Minecraft group
-      MEMORY: 21G
+      MEMORY: 20G
       TZ: UTC
       USE_AIKAR_FLAGS: true
       #JVM_XX_OPTS: +UseG1GC +ParallelRefProcEnabled MaxGCPauseMillis=200 +UnlockExperimentalVMOptions +UnlockDiagnosticVMOptions +DisableExplicitGC +AlwaysPreTouch G1NewSizePercent=30 G1MaxNewSizePercent=40 G1HeapRegionSize=8M G1ReservePercent=20 G1HeapWastePercent=5 G1MixedGCCountTarget=4 InitiatingHeapOccupancyPercent=15 G1MixedGCLiveThresholdPercent=90 G1RSetUpdatingPauseTimePercent=5 SurvivorRatio=32 +PerfDisableSharedMem MaxTenuringThreshold=1 -UseBiasedLocking UseAVX=3 +UseStringDeduplication +UseFastUnorderedTimeStamps +UseAES +UseAESIntrinsics UseSSE=4 +UseFMA AllocatePrefetchStyle=1 +UseLoopPredicate +RangeCheckElimination +EliminateLocks +DoEscapeAnalysis +UseCodeCacheFlushing +SegmentedCodeCache +UseFastJNIAccessors +OptimizeStringConcat +UseCompressedOops +UseThreadPriorities +OmitStackTraceInFastThrow +TrustFinalNonStaticFields ThreadPriorityPolicy=1 +UseInlineCaches +RewriteBytecodes +RewriteFrequentPairs +UseNUMA -DontCompileHugeMethods +UseFPUForSpilling +UseFastStosb +UseNewLongLShift +UseVectorCmov +UseXMMForArrayCopy +UseXmmI2D +UseXmmI2F +UseXmmLoadAndClearUpper +UseXmmRegToRegMoveAll

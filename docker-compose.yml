@@ -32,7 +32,7 @@ services:
       # Change this whenever there is a new ATM9 Version
       # Doing it this way so we can simply change version and coordinate updates before sessions
       # so it doesn't update while we're offline 
-      CF_FILENAME_MATCHER: 0.2.11
+      CF_FILENAME_MATCHER: 0.2.15
       # Mods (in order of ID):
       # - GoProne
       # - Dave's Building Extended

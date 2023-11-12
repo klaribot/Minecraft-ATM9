@@ -31,8 +31,10 @@ services:
       CF_SLUG: all-the-mods-9
       # Change this whenever there is a new ATM9 Version
       # Doing it this way so we can simply change version and coordinate updates before sessions
-      # so it doesn't update while we're offline 
-      CF_FILENAME_MATCHER: 0.2.15
+      # so it doesn't update while we're offline
+      # 
+      # Reminder: Previous version - 0.2.11
+      CF_FILENAME_MATCHER: 0.2.18b
       # Mods (in order of ID):
       # - GoProne
       # - Dave's Building Extended

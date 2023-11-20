@@ -33,14 +33,15 @@ services:
       # Doing it this way so we can simply change version and coordinate updates before sessions
       # so it doesn't update while we're offline
       # 
-      # Reminder: Previous version - 0.2.11
-      CF_FILENAME_MATCHER: 0.2.18b
+      # Reminder: Previous version - 0.2.18b
+      CF_FILENAME_MATCHER: 0.2.20
       # Mods (in order of ID):
       # - GoProne
       # - Dave's Building Extended
       # - Bigger Stacks
       # - Cave Dweller Reimagined
-      CF_FORCE_INCLUDE_MODS: 327968,568645,564896,921557
+      # - The Man from The Fog
+      CF_FORCE_INCLUDE_MODS: 327968,568645,564896,921557,890565
       CF_FORCE_SYNCHRONIZE: true
 
       # Uncomment for debug only

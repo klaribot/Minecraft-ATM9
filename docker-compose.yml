@@ -34,7 +34,7 @@ services:
       # so it doesn't update while we're offline
       # 
       # Reminder: Previous version - 0.2.25
-      CF_FILENAME_MATCHER: 0.2.34
+      CF_FILENAME_MATCHER: 0.2.35
       # Mods (in order of ID):
       # - GoProne
       # - Dave's Building Extended
